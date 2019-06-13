@@ -12,6 +12,7 @@ class PhotoDetailViewController: UIViewController {
 
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
+    let pickerController = UIImagePickerController()
 	
 	var themeHelper: ThemeHelper?
 	var photo: Photo?
@@ -21,10 +22,15 @@ class PhotoDetailViewController: UIViewController {
         super.viewDidLoad()
 
         updateViews()
+        self.pickerController.delegate = self
     }
     
     @IBAction func addPhoto(_ sender: UIButton) {
-		
+        
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            pickerController.sourceType = .photoLibrary
+            self.present(pickerController, animated: true, completion: nil)
+        }
     }
 	
 	@IBAction func savePhotoButtonTapped(_ sender: UIBarButtonItem) {
@@ -36,6 +42,8 @@ class PhotoDetailViewController: UIViewController {
             guard let photo = photo else { return }
             photoController?.updatePhoto(photo: photo, imageData: imageData, title: title)
         }
+        
+        navigationController?.popToRootViewController(animated: true)
 	}
     
     func setTheme() {
@@ -57,4 +65,23 @@ class PhotoDetailViewController: UIViewController {
         photoImageView.image = UIImage(data: photo.imageData)
         titleTextField.text = photo.title
     }
+}
+
+extension PhotoDetailViewController: UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.originalImage] as? UIImage else {
+            return
+        }
+        
+        photoImageView.image = image
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+extension PhotoDetailViewController: UINavigationControllerDelegate {
+    
 }
