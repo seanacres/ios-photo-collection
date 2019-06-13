@@ -161,20 +161,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QOK-qH-dol">
-                                <rect key="frame" x="40" y="160" width="334" height="452"/>
+                                <rect key="frame" x="40" y="160" width="334" height="502"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="V06-rf-AAB">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="376"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="426"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvl-Ju-03P">
-                                        <rect key="frame" x="0.0" y="384" width="334" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvl-Ju-03P">
+                                        <rect key="frame" x="0.0" y="434" width="334" height="30"/>
                                         <state key="normal" title="Add Photo"/>
                                         <connections>
                                             <action selector="addPhoto:" destination="4re-bJ-H0l" eventType="touchUpInside" id="wgp-Ex-NKC"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a title:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nn3-Qq-5tw">
-                                        <rect key="frame" x="0.0" y="422" width="334" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a title:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nn3-Qq-5tw">
+                                        <rect key="frame" x="0.0" y="472" width="334" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -186,7 +186,7 @@
                         <constraints>
                             <constraint firstItem="QOK-qH-dol" firstAttribute="top" secondItem="Siq-Ub-uCX" secondAttribute="top" constant="20" id="AEI-dI-tN5"/>
                             <constraint firstItem="Siq-Ub-uCX" firstAttribute="trailing" secondItem="QOK-qH-dol" secondAttribute="trailing" constant="40" id="LAT-AZ-MC6"/>
-                            <constraint firstItem="Siq-Ub-uCX" firstAttribute="bottom" secondItem="QOK-qH-dol" secondAttribute="bottom" constant="250" id="zCl-TN-R6A"/>
+                            <constraint firstItem="Siq-Ub-uCX" firstAttribute="bottom" secondItem="QOK-qH-dol" secondAttribute="bottom" constant="200" id="zCl-TN-R6A"/>
                             <constraint firstItem="QOK-qH-dol" firstAttribute="leading" secondItem="Siq-Ub-uCX" secondAttribute="leading" constant="40" id="zvC-nk-Vfm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Siq-Ub-uCX"/>
