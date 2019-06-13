@@ -21,14 +21,7 @@ class PhotosCollectionViewController: UICollectionViewController {
 		setTheme()
 	}
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.collectionView.register(PhotosCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-    }
-	
     // MARK: - Navigation
-
 	
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		switch segue.identifier {
