@@ -91,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				66C23EA722B2E3F200599FF1 /* PhotosCollectionViewCell.swift */,
+				66C23E9122B2D99200599FF1 /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -114,7 +115,6 @@
 		66C23EB122B2EB0600599FF1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				66C23E9122B2D99200599FF1 /* Main.storyboard */,
 				66C23E9422B2D99300599FF1 /* Assets.xcassets */,
 				66C23E9622B2D99300599FF1 /* LaunchScreen.storyboard */,
 				66C23E9922B2D99300599FF1 /* Info.plist */,
@@ -348,7 +348,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64HJH4K2FC;
-				INFOPLIST_FILE = PhotoCollection/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PhotoCollection/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -366,7 +366,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64HJH4K2FC;
-				INFOPLIST_FILE = PhotoCollection/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PhotoCollection/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

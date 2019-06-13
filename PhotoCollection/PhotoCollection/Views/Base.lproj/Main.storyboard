@@ -192,7 +192,11 @@
                         <viewLayoutGuide key="safeArea" id="Siq-Ub-uCX"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create Photo" id="sMi-01-d5V">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="VqO-89-lEa"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="VqO-89-lEa">
+                            <connections>
+                                <action selector="savePhotoButtonTapped:" destination="4re-bJ-H0l" id="QQV-EZ-EJy"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="createPhotoImageView" destination="V06-rf-AAB" id="q9m-Dh-ehA"/>
