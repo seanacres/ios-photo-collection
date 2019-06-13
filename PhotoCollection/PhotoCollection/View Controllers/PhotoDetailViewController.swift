@@ -10,7 +10,7 @@ import UIKit
 
 class PhotoDetailViewController: UIViewController {
 
-    @IBOutlet weak var createPhotoImageView: UIImageView!
+    @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
 	
 	var themeHelper: ThemeHelper?
@@ -20,7 +20,7 @@ class PhotoDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        updateViews()
     }
     
     @IBAction func addPhoto(_ sender: UIButton) {
@@ -28,17 +28,33 @@ class PhotoDetailViewController: UIViewController {
     }
 	
 	@IBAction func savePhotoButtonTapped(_ sender: UIBarButtonItem) {
-		
+        guard let imageData = photoImageView.image?.pngData(), let title = titleTextField.text else { return }
+        
+        if photo == nil {
+            photoController?.createPhoto(imageData: imageData, title: title)
+        } else {
+            guard let photo = photo else { return }
+            photoController?.updatePhoto(photo: photo, imageData: imageData, title: title)
+        }
 	}
-	
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func setTheme() {
+        guard let themeHelper = themeHelper,
+            let themePreference = themeHelper.themePreference else { return }
+        switch themePreference {
+        case "Dark":
+            view.backgroundColor = #colorLiteral(red: 0.03480474278, green: 0.03486460075, blue: 0.03481400758, alpha: 1)
+        case "Blue":
+            view.backgroundColor = #colorLiteral(red: 0.1203275058, green: 0.5686235742, blue: 0.9068016188, alpha: 1)
+        default:
+            view.backgroundColor = .gray
+        }
     }
-    */
-
+        
+    func updateViews() {
+        setTheme()
+        guard let photo = photo else { return }
+        photoImageView.image = UIImage(data: photo.imageData)
+        titleTextField.text = photo.title
+    }
 }
